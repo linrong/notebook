@@ -1,0 +1,6 @@
+{
+    "python.venvPath": "E:\\virtualenv",
+    "python.pythonPath": "E:\\virtualenv\\python3\\Scripts\\python.exe",
+    //"terminal.integrated.shellArgs.windows": ["/k", "E:\\virtualenv\\python3\\Scripts\\activate"]  
+}
+   
