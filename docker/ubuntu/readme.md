@@ -7,7 +7,7 @@ docker build -t linrong/ubuntu:1.0 .
 docker run -d -P --name ubuntu_dev linrong/ubuntu:1.0
 docker port ubuntu_dev
 
-### 2.0
+### 1.1（目前一般情况下不使用1.1，基于一个容器一个应用）
 ```
 sudo apt-get update
 # root:root@mysql
