@@ -8,7 +8,7 @@ COPY sources.list /etc/apt/
 RUN apt-get -y upgrade
 RUN apt-get update 
 RUN apt-get install -y build-essential && \
-    apt-get install -y libldap2-dev libsasl2-dev ldap-utils python-tox  lcov valgrind vim virtualenv && \
+    apt-get install -y libldap2-dev libsasl2-dev ldap-utils python-tox  lcov valgrind vim virtualenv virtualenvwrapper && \
     rm -rf /var/lib/apt/lists/*
 RUN mkdir /code
 WORKDIR /code
