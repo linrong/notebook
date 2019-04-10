@@ -8,7 +8,9 @@ COPY sources.list /etc/apt/
 RUN apt-get -y upgrade
 RUN apt-get update 
 RUN apt-get install -y build-essential && \
-    apt-get install -y libldap2-dev libsasl2-dev ldap-utils python-tox  lcov valgrind vim virtualenv virtualenvwrapper && \
+    apt-get install -y libldap2-dev libsasl2-dev ldap-utils python-tox  lcov valgrind vim virtualenv && \
     rm -rf /var/lib/apt/lists/*
+RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip install virtualenvwrapper -i https://mirrors.aliyun.com/pypi/simple/
 RUN mkdir /code
 WORKDIR /code
