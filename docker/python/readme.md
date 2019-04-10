@@ -1,3 +1,4 @@
+## Ubuntu16.04
 ### description
 how to bulid ubuntu16.04 with ssh
 
@@ -27,3 +28,8 @@ show variables like '%character%';
 # 创建数据库用户dgbuaa,密码dgbuaa@123.cn
 create user 'dgbuaa'@'localhost' identified by 'dgbuaa@123.cn';
 ```
+## debian
+### python3.6.5
+> 目前已不使用上面的ubuntu,修改为使用debian
+
+[docker hub](https://cloud.docker.com/repository/docker/linrong/python3)
