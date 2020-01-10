@@ -39,14 +39,14 @@ def getdatabyexcel(excelpath):
 
             row_i = -1 # 物料型号行下标
             for i in range(row):
-                if '物料型号' in df1.loc[i].values:
+                if '物料型号' in df1.loc[i].values or 'Part Number' in df1.loc[i].values:
                     row_i = i
                     break
             
             col_type = -1 # 物料型号列下标
             col_num = -1 # 数量列下标
-            col_type = int(np.argwhere(df1.loc[row_i].values=='物料型号'))
-            col_num = int(np.argwhere(df1.loc[row_i].values=='数量'))
+            col_type = int(np.argwhere(df1.loc[row_i].values=='物料型号')) if len(np.argwhere(df1.loc[row_i].values=='物料型号')) > 0 else int(np.argwhere(df1.loc[row_i].values=='Part Number'))
+            col_num = int(np.argwhere(df1.loc[row_i].values=='数量')) if len(np.argwhere(df1.loc[row_i].values=='数量')) > 0 else int(np.argwhere(df1.loc[row_i].values=='Quantity'))
 
             for index, file in enumerate(excelfilelist):
                 filepath = os.path.join(excelpath, file)
@@ -60,14 +60,14 @@ def getdatabyexcel(excelpath):
 
                         row_i_for = -1 # 物料型号行下标
                         for i in range(row_for):
-                            if '物料型号' in df.loc[i].values:
+                            if '物料型号' in df.loc[i].values or 'Part Number' in df.loc[i].values:
                                 row_i_for = i
                                 break
                         
                         col_type_for = -1 # 物料型号列下标
                         col_num_for = -1 # 数量列下标
-                        col_type_for = int(np.argwhere(df.loc[row_i_for].values=='物料型号'))
-                        col_num_for = int(np.argwhere(df.loc[row_i_for].values=='数量'))
+                        col_type_for = int(np.argwhere(df.loc[row_i_for].values=='物料型号')) if len(np.argwhere(df.loc[row_i_for].values=='物料型号'))>0 else int(np.argwhere(df.loc[row_i_for].values=='Part Number'))
+                        col_num_for = int(np.argwhere(df.loc[row_i_for].values=='数量')) if len(np.argwhere(df.loc[row_i_for].values=='数量'))>0 else int(np.argwhere(df.loc[row_i_for].values=='Quantity'))
                         
                         # 循环对比两个excel中的物料型号
                         row_i_for+=1 # 从正式数据开始计算
